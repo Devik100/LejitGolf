@@ -11,7 +11,7 @@ block_image_width = 5;
 block_image_height = 5;
 
 function load_img(){
-	fabric.Image.fromURL("golf-h1.png", function (Img) {
+	fabric.Image.fromURL("golf-h.png", function (Img) {
 		hj = Img;
 		hj.scaleToWidth(50)
 		hj.scaleToHeight(50)
@@ -19,7 +19,7 @@ function load_img(){
 			top:hy,
 			left:hx
 		})
-		canvas.add(hole_obj)
+		canvas.add(hj)
 	})
 	new_image();
 }
@@ -34,11 +34,12 @@ function new_image()
 			top:by,
 			left:bx
 		})
-		canvas.add(ball_obj)
+		canvas.add(bj)
 	})
 }
 
 window.addEventListener("keydown", my_keydown);
+
 
 function my_keydown(e)
 {
@@ -46,7 +47,7 @@ function my_keydown(e)
 	console.log(keyPressed);
 	if ((bx==hx)&&(by==hy)) {
 		canvas.remove(bj)
-		document.getElementById("hd3").innerHTML="Bottom text"
+		document.getElementById("hd3").innerHTML="Whoopsie dhoopsie i forgot to ut my punchline here (I also forot the line)"
 		document.getElementById("nyCemuez").style.borderColor="red"
 	}
 	
@@ -76,8 +77,8 @@ function my_keydown(e)
 	function up()
 	{
 		if (by > 5) {
-			by += block_image_height
-			canvas.remove(ball_obj)
+			by -= block_image_height
+			canvas.remove(bj)
 			new_image()
 		}
 	}
@@ -86,7 +87,7 @@ function my_keydown(e)
 	{
 		if (by <= 450) {
 			by += block_image_height
-			canvas.remove(ball_obj)
+			canvas.remove(bj)
 			new_image()
 		}
 	}
@@ -96,7 +97,7 @@ function my_keydown(e)
 		if(bx>5)
 		{
 			bx -= block_image_width
-			canvas.remove(ball_obj)
+			canvas.remove(bj)
 			new_image()
 		}
 	}
@@ -105,8 +106,8 @@ function my_keydown(e)
 	{
 		if(bx <=1050)
 		{
-			bx -= block_image_width
-			canvas.remove(ball_obj)
+			bx += block_image_width
+			canvas.remove(bj)
 			new_image()
 		}
 	}

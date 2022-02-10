@@ -1,10 +1,10 @@
 .body_background 
 {
     background-position: center;
-    background-size:contain;
+    background-size:cover;
 	background:url(Grass.jpg);
 }
-#myCanvas
+#nyCemuez
 {
     border-width:10px;
     border-style:ridge;
